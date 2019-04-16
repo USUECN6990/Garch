@@ -1,1 +1,1 @@
-from Garch import *
+from .Garch import *
