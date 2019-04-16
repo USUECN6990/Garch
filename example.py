@@ -1,6 +1,6 @@
 # import packages test
 from src.Garch import Garch
-from src.Garch import vanilla_garch
+from src.Garch import vanilla_garch, gjr_garch
 import pandas as pd
 import numpy as np
 
@@ -28,3 +28,11 @@ fit2.results
 
 # Nelder-Mead Estimated Parameters
 fit2.params
+
+begVals2 = np.array([0.0, 0.045, .23, .64, 0.01])
+
+gjr_fit = Garch(gjr_garch)
+#fitted = gjr_fit.fit(r,begVals2,method = 'Nelder-Mead')
+gjr_fit.fit(r,begVals2,method = 'Nelder-Mead')
+gjr_fit.predict(steps = 10)
+gjr_fit.results
