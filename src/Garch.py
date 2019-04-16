@@ -37,7 +37,9 @@ class Garch(BaseEstimator, ClassifierMixin):
                                              self.callback, self.options)
         
         self.output = GarchOutput(minimization)
-
+		self.params = self.output.params
+		self.results = self.output.results
+	
         return self.output
     
     
