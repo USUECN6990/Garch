@@ -4,7 +4,7 @@ from src.Garch import vanilla_garch
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("dem2gbp.csv")
+df = pd.read_csv("data/dem2gbp.csv")
 r = df.DEM2GBP.values[:749] 
 
 begVals = np.array([0.0, 0.045, .23, .64])
