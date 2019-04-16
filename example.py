@@ -1,6 +1,6 @@
 # import packages test
-from Garch import Garch
-from Garch import vanilla_garch
+from src.Garch import Garch
+from src.Garch import vanilla_garch
 import pandas as pd
 import numpy as np
 
