@@ -13,7 +13,7 @@ See example.py for example code.
 The `GARCH` class must take a specific type of GARCH model class as an argument in order to instantiate. We have created two kinds of GARCH model classes to use (`vanilla_garch` and `gjr_garch`, described below). However, the `GARCH` class was designed to be flexible and  additional classes of specific types of GARCH models can be created and used with it. 
 
 If a new class for a type of GARCH model is developed in must contain `likelihood`, `minimize` and `forecast` methods. 
-The `likelihood`, method needs to include a argument called "sigma_last" (default to false). The purpose of this argument is that if false the `likelihood` method returns a number (the log likelihood) or if true it returns estimated sigma squared and &epsilon;<sub>t-1<\sub>
+The `likelihood`, method needs to include a argument called "sigma_last" (default to false). The purpose of this argument is that if false the `likelihood` method returns a number (the log likelihood) or if true it returns estimated sigma squared and &epsilon;<sub>t-1</sub>
 
 ### vanilla_garch
 
