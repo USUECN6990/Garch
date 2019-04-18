@@ -1,5 +1,5 @@
 # GARCH
-
+Testing <sub>subscript</sub> and <sup>superscript</sup>
 Final Group Project for ECN6990--Implementing the GARCH models using python. 
 
 ## Overview:
