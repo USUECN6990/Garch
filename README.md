@@ -17,11 +17,14 @@ The `likelihood`, method needs to include a argument called "sigma_last" (defaul
 
 ### vanilla_garch
 
-citation here
+Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vol. 2). John Wiley & Sons. (See page 136)
+
+Sheppard, K. (2018). Introduction to python for econometrics, statistics and data analysis. Self-published, University of Oxford, version, 2. (See page 349)
 
 ### gjr_garch
 
-citation here
+Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vol. 2). John Wiley & Sons. (See page 150)
+
 
 ## How to instantiate an object
 
