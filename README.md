@@ -26,6 +26,8 @@ Sheppard, K. (2018). Introduction to python for econometrics, statistics and dat
 
 ### gjr_garch
 
+&sigma;<sup>2</sup><sub>t</sub> = &omega; + &alpha;&epsilon;<sub>t-1</sub><sup>2</sup> + &gamma;&epsilon;<sup>2</sup><sub>t-1</sub>I<sub>&epsilon;<sub>t-1</sub></sub> + &beta;&sigma;<sup>2</sup><sub>t-1</sub>
+
 Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vol. 2). John Wiley & Sons. (See page 150)
 
 
