@@ -11,28 +11,49 @@ begVals = np.array([0.0, 0.045, .23, .64])
 finfo = np.finfo(np.float64)
 bounds = [(-10, 10), (finfo.eps, 2 * r.var()), (0.0, 1.0), (0.0, 1.0)]
 
+
+# Examples using "vanilla_garch" class -----------------------------------
+
+obj1 = Garch(vanilla_garch) # instantiate object
+
 # fit 1 Using SLSQP
-fit1 = Garch(vanilla_garch).fit(r,begVals,'SLSQP', bounds = bounds)
+obj1.fit(r,begVals,'SLSQP', bounds = bounds)
 
 # SLSQP Results
-fit1.results
+print(obj1.results) # results from minimize function (more verbose than .params)
 
 #SLSQP Estimated Parameters
-fit1.params
+print(obj1.params) # fitted parameters
+
+# predict sigma squared
+obj1.predict(steps = 10) # predicting 10 time steps into the future
 
 # fit 2 Using Nelder-Mead (Which is default)
-fit2 = Garch(vanilla_garch).fit(r, begVals, method = 'Nelder-Mead')
+obj2 = Garch(vanilla_garch)
+
+# fit
+obj2.fit(r, begVals, method = 'Nelder-Mead')
 
 # Nelder-Mead results
-fit2.results
+print(obj2.results)
 
 # Nelder-Mead Estimated Parameters
-fit2.params
+print(obj2.params)
 
-begVals2 = np.array([0.0, 0.045, .23, .64, 0.01])
+# prediction
+print(obj2.predict(steps = 10))
 
-gjr_fit = Garch(gjr_garch)
-#fitted = gjr_fit.fit(r,begVals2,method = 'Nelder-Mead')
-gjr_fit.fit(r,begVals2,method = 'Nelder-Mead')
-gjr_fit.predict(steps = 10)
-gjr_fit.results
+# Examples using "gjr_garch" class ----------------------------------------
+begVals2 = np.array([0.0, 0.045, .23, .64, 0.01]) 
+
+obj_gjr = Garch(gjr_garch)
+
+# fit model
+obj_gjr.fit(r,begVals2,method = 'Nelder-Mead')
+
+# examine results from fitting
+print(obj_gjr.results)
+print(obj_gjr.params)
+
+# make predictions
+obj_gjr.predict(steps = 10)
