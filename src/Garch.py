@@ -37,11 +37,18 @@ class Garch(BaseEstimator, ClassifierMixin):
                                              self.callback, self.options)
         
         self.output = GarchOutput(minimization)
-        self.params = self.output.params
-        self.results = self.output.results
+        self.__params = self.output.params
+        self.__results = self.output.results
 	
         return self.output
     
+    @property
+    def results(self):
+        return self.__results
+    @property
+    def params(self):
+        return self.__params
+
     
     def predict(self, steps = 1):
     # Ensure that instance has been fitted
