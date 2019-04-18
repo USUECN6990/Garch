@@ -33,7 +33,10 @@ Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vo
 
 ## How to instantiate an object
 
-...
+Create an object with the chosen GARCH paramater inside. 
+Example: 
+obj1 = Garch(vanilla_garch) 
+This will instantiate the object for use of type vanilla garch. 
 
 ## How to fit model
 
