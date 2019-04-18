@@ -8,10 +8,10 @@ from sklearn.utils.multiclass import unique_labels
 import scipy.optimize as opt
 
 class Garch(BaseEstimator, ClassifierMixin):
-	"""
+    """
 	Class Garch takes an argument for model. Should be specified as one of "vanilla_garch" or "gjr_garch". 
 	Garch has methods for fit and predict. After being fitted Garch has properties for fit results and params.
-	"""
+    """
     def __init__(self, model):
         self.__model = model
 
@@ -30,12 +30,12 @@ class Garch(BaseEstimator, ClassifierMixin):
 
     def fit(self, X, begVals, method = "Nelder-Mead", jac=None, hess=None, hessp=None, bounds=None,
             constraints=(), tol=None, callback=None, options=None):
-    	"""
-    	fit method takes arguments for X, begVals, method, and other arguments which are 
-    	passed to scipy.optimize.minimize (see scipy documentation). Where X is the data, 
-    	begVals are initial values to be used, and method is one of the minimization methods
-    	used in scipy.optimize.minimize. Has properties for params and results.
-    	"""   
+        """
+        	fit method takes arguments for X, begVals, method, and other arguments which are 
+         used to scipy.optimize.minimize (see scipy documentation). Where X is the data, 
+         begVals are initial values to be used, and method is one of the minimization methods
+         as described in scipy.optimize.minimize. Has properties for params and results.
+         """   
         self.X_ = X
         self.begVals = begVals
         self.method = method
@@ -61,10 +61,10 @@ class Garch(BaseEstimator, ClassifierMixin):
 
     
     def predict(self, steps = 1):
-    	"""
-    	Predict method takes argument for steps, where steps are number of future time periods,
-	default is steps = 1 for 1 time period in the future. Predict returns an array of predicted values.
-    	"""
+        """
+        Predict method takes argument for steps, where steps are number of future time periods,
+        default is steps = 1 for 1 time period in the future. Predict returns an array of predicted values.
+        """
     # Ensure that instance has been fitted
         check_is_fitted(self, "X_")
         self.steps = steps
