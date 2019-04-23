@@ -10,10 +10,10 @@ See example.py for example code.
 
 ## Description of classes used when instantiating GARCH object: 
 
-The `GARCH` class must take a specific type of GARCH model class as an argument in order to instantiate. We have created two kinds of GARCH model classes to use (`vanilla_garch` and `gjr_garch`, described below). However, the `GARCH` class was designed to be flexible and  additional classes of specific types of GARCH models can be created and used with it. 
+The `GARCH` class must take a specific type of GARCH model class as an argument in order to instantiate. Two kinds of GARCH model classes were created (`vanilla_garch` and `gjr_garch`, described below). However, the `GARCH` class was designed to be flexible and  additional classes of specific types of GARCH models can be created and used with it. 
 
-If a new class for a type of GARCH model is developed in must contain `likelihood()`, `minimize()` and `forecast()` methods. 
-The `likelihood()`, method needs to include a argument called "sigma_last" (default to false). The purpose of this argument is that if false the `likelihood()` method returns a number (the log likelihood) or if true it returns estimated &sigma;<sup>2</sup> and &epsilon;<sub>t-1</sub>
+If a new class for a type of GARCH model is developed it must contain `likelihood()`, `minimize()`, and `forecast()` methods. 
+The `likelihood()`, method needs to include a argument called "sigma_last" (default is false). The purpose of this argument is that if false, the `likelihood()` method returns a number (the log likelihood) or if true, it returns estimated values of &sigma;<sup>2</sup> and &epsilon;<sub>t-1</sub>.
 
 ### vanilla_garch
 
@@ -41,11 +41,11 @@ This will instantiate the object for use of type vanilla garch.
 ## How to fit model
 
 The `fit()` method was modeled after SciKit-Learn. 
-The `fit()` method requires two arguments X (array of the data to which GARCH model is being fit) and begVals (initial parameter values needed by GARCH model, used as starting values in the minimize function). 'begVals' is a array of length four ($mu;, $omega;, $alpha;, $beta; for `vanilla_garch`) or five ($mu;, $omega;, $alpha;, $beta;, $gamma; for `gjr_garch`). The default value for the method argument is "Nelder-Mead", which is the algorithm used to find optimized maximum likelihood parameters. Additional, optional arguments to be passed to the minimize function are allowed, see the scipy.optimize.minimize documentation. 
+The `fit()` method requires two arguments X (array of the data to which GARCH model is being fit) and begVals (initial parameter values needed by GARCH model, used as starting values in the minimize function). 'begVals' is a array of length four (&mu;, &omega;, &alpha;, &beta; for `vanilla_garch`) or five (&mu;, &omega;, &alpha;, &beta;, &gamma; for `gjr_garch`). The default value for the method argument is "Nelder-Mead", which is the algorithm used to find optimized maximum likelihood parameters. Additional, optional arguments to be passed to the minimize function are allowed, see the scipy.optimize.minimize documentation. 
 
 Example:
 
-`obj1.fit(data, begVals = [$mu;, $omega;, $alpha;, $beta;])`
+`obj1.fit(data, begVals = [&mu;, &omega;, &alpha;, &beta;])`
 
 After running the `fit()` method, `obj1.params` will return the fitted parameters, and `obj1.results` returns the output for opt.minimize.
 
