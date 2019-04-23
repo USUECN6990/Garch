@@ -4,7 +4,7 @@ Final Group Project for ECN6990--Implementing the GARCH models using python.
 
 ## Overview:
 
-We created a `GARCH` class. To instantiate an object of this class we use classes of specific types of garch models (described below). The instantiated object can be used to fit the model and make predictions. Thus the `GARCH` class is loosely based on classes that are used in the `sklearn` pipeline, and has both `fit()` and `predict` methods. 
+To instantiate an object of this class, classes of specific types of garch models (described below) were used. The instantiated object can be used to fit the model and make predictions. Thus the `GARCH` class is loosely based on classes that are used in the `sklearn` pipeline, and has both `fit()` and `predict` methods. 
 
 See example.py for example code. 
 
