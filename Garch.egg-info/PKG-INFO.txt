@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: Garch
+Version: 0.1
+Summary: The GARCH Module
+Home-page: https://github.com/USUECN6990/Garch
+Author: ECN6990
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: Garch Module
+Keywords: Garch
+Platform: UNKNOWN
