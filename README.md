@@ -45,7 +45,7 @@ The `fit()` method requires two arguments X (array of the data to which GARCH mo
 
 Example:
 
-`obj1.fit(data, begVals = [&mu;, &omega;, &alpha;, &beta;])`
+`obj1.fit(data, begVals = [`&mu;, &omega;, &alpha;, &beta;`])`
 
 After running the `fit()` method, `obj1.params` will return the fitted parameters, and `obj1.results` returns the output for opt.minimize.
 
