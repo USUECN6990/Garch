@@ -2,7 +2,7 @@
 
 Final Group Project for ECN6990: Independent Python Study--Implementing the GARCH models using python.
 
-GARCH stands for Generalized Autoregressive Conditional heteroskedasticity.
+GARCH stands for Generalized Autoregressive Conditional Heteroskedasticity.
 
 ## Overview:
 
