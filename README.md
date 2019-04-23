@@ -12,8 +12,8 @@ See example.py for example code.
 
 The `GARCH` class must take a specific type of GARCH model class as an argument in order to instantiate. We have created two kinds of GARCH model classes to use (`vanilla_garch` and `gjr_garch`, described below). However, the `GARCH` class was designed to be flexible and  additional classes of specific types of GARCH models can be created and used with it. 
 
-If a new class for a type of GARCH model is developed in must contain `likelihood`, `minimize` and `forecast` methods. 
-The `likelihood`, method needs to include a argument called "sigma_last" (default to false). The purpose of this argument is that if false the `likelihood` method returns a number (the log likelihood) or if true it returns estimated &sigma;<sup>2</sup> and &epsilon;<sub>t-1</sub>
+If a new class for a type of GARCH model is developed in must contain `likelihood()`, `minimize()` and `forecast()` methods. 
+The `likelihood()`, method needs to include a argument called "sigma_last" (default to false). The purpose of this argument is that if false the `likelihood()` method returns a number (the log likelihood) or if true it returns estimated &sigma;<sup>2</sup> and &epsilon;<sub>t-1</sub>
 
 ### vanilla_garch
 
@@ -30,20 +30,23 @@ Sheppard, K. (2018). Introduction to python for econometrics, statistics and dat
 
 Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vol. 2). John Wiley & Sons. (See page 150)
 
-
 ## How to instantiate an object
 
 Create an object with the chosen GARCH paramater inside. 
+
 Example: 
-obj1 = Garch(vanilla_garch) 
+`obj1 = Garch(vanilla_garch) `
 This will instantiate the object for use of type vanilla garch. 
 
 ## How to fit model
 
-Description of arguments needed...
 
 ## Prediction
 
-How model prediction works...
+The `predict()` method takes one argument (steps), which is the number of time steps that &sigma;<sup>2</sup> is predicted for. 
+
+Example: `obj.fit(steps = 5)`, predicting 5 time steps (returns array of length 5).
+
+
 
 
