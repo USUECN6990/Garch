@@ -47,12 +47,12 @@ Example:
 
 `obj1.fit(data, begVals = [`&mu;, &omega;, &alpha;, &beta;`])`
 
-After running the `fit()` method, `obj1.params` will return the fitted parameters, and `obj1.results` returns the output for opt.minimize.
+After running the `fit()` method, `obj1.params` will return the fitted parameters, and `obj1.results` will return the output for opt.minimize.
 
 
 ## Prediction
 
-The `predict()` method takes one argument (steps), which is the number of time steps that &sigma;<sup>2</sup> is predicted for. 
+The `predict()` method takes one argument (steps), which is the number of time steps that &sigma;<sup>2</sup> is predicted. 
 
 Example: `obj.fit(steps = 5)`, predicting 5 time steps (returns array of length 5).
 
