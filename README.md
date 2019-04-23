@@ -32,13 +32,22 @@ Alexander, C. (2008). Market risk analysis, practical financial econometrics (Vo
 
 ## How to instantiate an object
 
-Create an object with the chosen GARCH paramater inside. 
+Create an object with the chosen GARCH parameter inside. 
 
 Example: 
 `obj1 = Garch(vanilla_garch) `
 This will instantiate the object for use of type vanilla garch. 
 
 ## How to fit model
+
+The `fit()` method was modeled after SciKit-Learn. 
+The `fit()` method requires two arguments X (array of the data to which GARCH model is being fit) and begVals (initial parameter values needed by GARCH model, used as starting values in the minimize function). 'begVals' is a array of length four ($mu;, $omega;, $alpha;, $beta; for `vanilla_garch`) or five ($mu;, $omega;, $alpha;, $beta;, $gamma; for `gjr_garch`). The default value for the method argument is "Nelder-Mead", which is the algorithm used to find optimized maximum likelihood parameters. Additional, optional arguments to be passed to the minimize function are allowed, see the scipy.optimize.minimize documentation. 
+
+Example:
+
+`obj1.fit(data, begVals = [$mu;, $omega;, $alpha;, $beta;])`
+
+After running the `fit()` method, `obj1.params` will return the fitted parameters, and `obj1.results` returns the output for opt.minimize.
 
 
 ## Prediction
