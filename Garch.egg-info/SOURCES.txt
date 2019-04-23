@@ -1,7 +1,7 @@
 setup.py
 src/__init__.py
 src/Garch.py
-Garch.egg-info/PKG-INFO
+Garch.egg-info/PKG-INFO.txt
 Garch.egg-info/SOURCES.txt
 Garch.egg-info/dependency_links.txt
 Garch.egg-info/top_level.txt
